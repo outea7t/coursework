@@ -1,0 +1,52 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Vite / фронт
+dist/
+dist-ssr/
+.vite/
+
+# Electron
+# Скомпилированный main/preload
+dist/electron/
+# Возможные выходные директории сборщиков
+build/
+out/
+release/
+release-builds/
+*.asar
+
+# TypeScript
+*.tsbuildinfo
+
+# Логи
+*.log
+logs/
+*.log.*
+debug.log*
+error.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE / редакторы
+.vscode/
+.idea/
+*.iml
+
+# OS / прочий мусор
+.DS_Store
+Thumbs.db
+
+# Тесты / отчёты (если появятся)
+coverage/
+.jest/

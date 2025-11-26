@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["electron/main.ts", "electron/preload.ts"],
+  "compilerOptions": {
+    "outDir": "dist/electron",
+    "module": "commonjs",
+    "target": "ES2020"
+  }
+}
