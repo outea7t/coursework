@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 const path = __importStar(require("node:path"));
 let mainWindow = null;
+const isDev = process.env.NODE_ENV === "development";
 async function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
         width: 1200,
@@ -47,10 +48,10 @@ async function createWindow() {
             contextIsolation: true,
             nodeIntegration: false,
         },
-        title: "Chain Drive Calculator"
+        title: "Chain Drive Calculator",
     });
-    const devUrl = "http://localhost:5173";
-    if (process.env.NODE_ENV !== "production") {
+    if (isDev) {
+        const devUrl = "http://localhost:5173";
         await mainWindow.loadURL(devUrl);
         mainWindow.webContents.openDevTools();
     }

@@ -3,6 +3,8 @@ import * as path from "node:path";
 
 let mainWindow: BrowserWindow | null = null;
 
+const isDev = process.env.NODE_ENV === "development";
+
 async function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1200,
@@ -14,12 +16,11 @@ async function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
     },
-    title: "Chain Drive Calculator"
+    title: "Chain Drive Calculator",
   });
 
-  const devUrl = "http://localhost:5173";
-
-  if (process.env.NODE_ENV !== "production") {
+  if (isDev) {
+    const devUrl = "http://localhost:5173";
     await mainWindow.loadURL(devUrl);
     mainWindow.webContents.openDevTools();
   } else {

@@ -23,7 +23,7 @@ const defaultInput: InputParams = {
   angleDegrees: 60
 };
 
-// Человеческие названия для сообщений об ошибке
+// названия для сообщений об ошибке
 const fieldLabels: Record<keyof InputParams, string> = {
   i: "Число передач, i",
   sop: "Sоп — проекция опорной поверхности",
@@ -57,10 +57,10 @@ export const App: React.FC = () => {
       const raw = e.target.value.replace(",", ".");
       const value = parseFloat(raw);
 
-      // если число валидное и отрицательное — выдаём ошибку и НЕ меняем state
+      // если число валидное и отрицательное — выдаём ошибку и не меняем state
       if (Number.isFinite(value) && value < 0) {
         window.alert(`Параметр «${fieldLabels[field]}» не может быть отрицательным.`);
-        // ничего не обновляем -> контролируемый инпут вернётся к прошлому значению
+        // ничего не обновляем контролируемый инпут вернётся к прошлому значению
         return;
       }
 

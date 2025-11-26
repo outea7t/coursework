@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron\"",
     "dev:renderer": "vite",
-    "dev:electron": "tsc -p tsconfig.electron.json && wait-on http://localhost:5173 && electron ./dist/electron/main.js",
-    "build": "vite build && tsc -p tsconfig.electron.json"
+    "dev:electron": "NODE_ENV=development tsc -p tsconfig.electron.json && wait-on http://localhost:5173 && electron ./dist/electron/main.js",
+    "build": "vite build && tsc -p tsconfig.electron.json",
+    "start": "NODE_ENV=production electron ./dist/electron/main.js"
   },
   "devDependencies": {
     "@types/node": "^22.19.1",
