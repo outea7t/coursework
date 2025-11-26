@@ -33,8 +33,8 @@ npm install
 
 ## Запуск
 ```bash
-npm run build
-npx electron ./dist/electron/main.js
+npm run build                                                             ─╯
+npm run start
 ```
 
 ## Запуск в режиме разработки
