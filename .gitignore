@@ -12,6 +12,8 @@ yarn.lock
 dist/
 dist-ssr/
 .vite/
+dist/electron/
+dist/renderer/
 
 # Electron
 # Скомпилированный main/preload
